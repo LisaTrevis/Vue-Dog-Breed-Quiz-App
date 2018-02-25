@@ -17,6 +17,7 @@ h1 {
 .answer {
 	display: inline-block;
 	width: 40%;
+	text-align: center;
 }
 
 ul {
@@ -29,11 +30,13 @@ li {
 	list-style-type: none;
 	display: inline-block;
 	margin-bottom: 30px;
+	text-align: center;
 }
 
 img {
 	display: inline-block;
 	width: 40%;
+	border-radius: 5%;
 }
 
 h2 {
@@ -50,27 +53,30 @@ input {
 	border-radius: 10px;
 }
 
+#results {
+	text-align: right;
+}
+
 button {
-	font-size: 30px;
+	font-size: 40px;
 	background-color: #AAFAB0;
 	border-radius: 10px;
 	font-family: 'Chewy', cursive;
+	margin-bottom: 20px;
 }
 
 h3 {
 	font-size: 30px;
+	margin-bottom: 20px;
 }
 
 .correct {
 	color: #61D171;
-	font-size: 60px;
+	font-size: 40px;
 }
 
 .incorrect {
 	color: #FF362B;
-	font-size: 60px;
+	font-size: 40px;
 }
 
-.footer {
-	margin-bottom: 50px;
-}

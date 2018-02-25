@@ -24,6 +24,8 @@ new Vue({
 	},
 	methods: {
 		calculate: function() {
+			this.correct = 0;
+			this.incorrect= 0;
 			for( i = 0; i < this.answers.length; i++) {
 				var input = document.getElementById("input" + i).value
 				var guess = input.toLowerCase()

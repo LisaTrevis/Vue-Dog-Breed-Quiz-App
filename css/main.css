@@ -1,0 +1,76 @@
+body {
+	font-family: 'Chewy', cursive;
+	background-color: #FBFFC2;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-size: 80px;
+	text-align: center;
+}
+
+#images {
+	margin-top: 40px;
+}
+
+.answer {
+	display: inline-block;
+	width: 40%;
+}
+
+ul {
+	display: inline-block;
+	margin: 0 auto;
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+	display: inline-block;
+	margin-bottom: 30px;
+}
+
+img {
+	display: inline-block;
+	width: 40%;
+}
+
+h2 {
+	font-size: 50px;
+	display: inline-block;
+}
+
+input {
+	font-size: 40px;
+	background-color: #fff;
+	text-align: center;
+	display: inline-block;
+	font-family: 'Chewy', cursive;
+	border-radius: 10px;
+}
+
+button {
+	font-size: 30px;
+	background-color: #AAFAB0;
+	border-radius: 10px;
+	font-family: 'Chewy', cursive;
+}
+
+h3 {
+	font-size: 30px;
+}
+
+.correct {
+	color: #61D171;
+	font-size: 60px;
+}
+
+.incorrect {
+	color: #FF362B;
+	font-size: 60px;
+}
+
+.footer {
+	margin-bottom: 50px;
+}

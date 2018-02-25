@@ -23,38 +23,40 @@
 		<div class="container">
 			<h1>Guess the dog breed!</h1>
 			
-			<div id="images" class="questions row">
+			<div class="row">
+				<div id="app">
 
-				<ul>
-					<li v-for="image in imageURLs" v-for="answer in answers" class="img-responsive pics">
-						<img :src="image" class="col-6">
-						<div class="answer col-6">	
-							<h2 id="answer">Answer:</h2>
-							<input id="input" type="text" placeholder="Enter the breed">
-						</div>
-					</li>
-				</ul>
+					<ul>
+						<li v-for="(image, index) in imageURLs" v-for="answer in answers" class="pics">
+							<img :src="image" class="img-responsive col-6">
+							<div class="answer col-6">	
+								<h2 v-bind:id="'answer' + index">Answer:</h2>
+								<input v-bind:id="'input' + index" type="text" placeholder="Enter the breed">
+							</div>
+						</li>
+					</ul>
 				
+					<div id="results">
+						<button v-on:click="calculate">Submit Answers</button>
+						<h3 id="correct">Correct: {{ correct }}</h3>
+						<h3 id="incorrect">Incorrect: {{ incorrect }}</h3>
+					</div>				
+				</div>
 			</div>
-
-			<button v-on:click="calculate">Submit Answers</button>
-
-			<h3 id="correct">Correct:</h3>
-			<h3 id="incorrect">Incorrect:</h3>
 
 		</div>
 
 		<!-- This gives access to the jquery library -->
-		<script
+		<!-- <script
 		src="https://code.jquery.com/jquery-3.2.1.js"
 		integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-		crossorigin="anonymous"></script>
+		crossorigin="anonymous"></script> -->
 
 		<!-- Popper is required for bootstrap 4 JS functionality -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script> -->
 
 		<!-- This makes bootstrap 4 JS work -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+		<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script> -->
 
 		<!-- This connects the VueJS framework -->
 		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>

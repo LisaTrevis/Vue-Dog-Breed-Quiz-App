@@ -1,5 +1,5 @@
 new Vue({
-	el: '#images',
+	el: '#app',
 	data: {
 		imageURLs: [
 			"img/dog0.jpg",
@@ -18,27 +18,29 @@ new Vue({
 			"golden retriever",
 			"greyhound",
 			"weimaraner"
-		]
+		],
+		correct: 0,
+		incorrect: 0
 	},
 	methods: {
-		calculate: function(event) {
-			var correct = 0
-			var incorrect = 0
-			for( i = 0; i < answers.length; i++) {
-				var input = document.getElementById("input" + [i]).value
+		calculate: function() {
+			for( i = 0; i < this.answers.length; i++) {
+				var input = document.getElementById("input" + i).value
 				var guess = input.toLowerCase()
-				var answer = answers[i]
-				var answerColor = document.getElementById("answer" + [i])
+				var answer = this.answers[i]
+				var answerColor = document.getElementById("answer" + i)
 				if (answer == guess) {
 					answerColor.className = "correct"
-					correct++
+					this.correct++
 				} else {
 					answerColor.className = "incorrect"
-					incorrect++
+					this.incorrect++
 				}
-			}document.getElementById("correct").innerHTML = "Correct: " + correct
-			document.getElementById("incorrect").innerHTML = "Incorrect: " + incorrect
-			document.getElementById("form").reset();
+			};
+
+			document.getElementById("correct").textContent = "Correct: " + this.correct;
+
+			document.getElementById("incorrect").textContent = "Incorrect: " + this.incorrect;
 		}
 	}
 })

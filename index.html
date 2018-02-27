@@ -27,17 +27,23 @@
 				<div id="app">
 
 					<ul>
+				<!-- This is our template that creates all of the <li>s  			using the imageURLs array under the data property -->
 						<li v-for="(image, index) in imageURLs" v-for="answer in answers" class="pics">
+						<!-- This binds the src attribute to each instance created -->	
 							<img :src="image" class="img-responsive col-6">
-							<div class="answer col-6">	
+							<div class="answer col-6">
+							<!-- This binds a numbered answer id to each instance created depending on which iteration through the v-for loop it is -->	
 								<h2 v-bind:id="'answer' + index">Answer:</h2>
+							<!-- This binds a numbered input id to each instance created depending on which iteration throught eh v-for loop it is -->
 								<input v-bind:id="'input' + index" type="text" placeholder="Enter the breed">
 							</div>
 						</li>
 					</ul>
 				
 					<div id="results">
+						<!-- This binds the click event to the calulate method in the Vue instance -->
 						<button v-on:click="calculate">Submit Answers</button>
+						<!-- These update the correct & incorrect variable values once the calculate method runs -->
 						<h3 id="correct">Correct: {{ correct }}</h3>
 						<h3 id="incorrect">Incorrect: {{ incorrect }}</h3>
 					</div>				
@@ -46,17 +52,6 @@
 
 		</div>
 
-		<!-- This gives access to the jquery library -->
-		<!-- <script
-		src="https://code.jquery.com/jquery-3.2.1.js"
-		integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-		crossorigin="anonymous"></script> -->
-
-		<!-- Popper is required for bootstrap 4 JS functionality -->
-		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script> -->
-
-		<!-- This makes bootstrap 4 JS work -->
-		<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script> -->
 
 		<!-- This connects the VueJS framework -->
 		<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
